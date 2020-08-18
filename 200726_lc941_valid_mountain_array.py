@@ -1,3 +1,6 @@
+# 941. Valid Mountain Array
+# https://leetcode.com/problems/valid-mountain-array/
+
 # Given an array A of integers, return true if and only if it is a valid mountain array.
 
 # Recall that A is a mountain array if and only if:
@@ -29,8 +32,8 @@ class Solution:
             if A[j-1] <= A[j]:
                 break
         
-        print(i)
-        print(j)
+        # print(i)
+        # print(j)
         return i==j
 
 milord = Solution()
