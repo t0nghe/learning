@@ -13,7 +13,7 @@
 # Note: Please solve it without division and in O(n).
 
 ###########################################
-# SOLUTION 3
+# SOLUTION 3 -- FASTER THAN 92.57%; MORE MEMORY-EFFICIENT THAN 48.41% SUBMISSIONS
 # By building a list with 2 rounds of multiplication, we can manage to give a solution that has O(2n) time complexity.
 
 class Solution3:
