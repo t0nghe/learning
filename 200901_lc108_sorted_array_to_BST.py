@@ -21,9 +21,32 @@
 from __binarytree__ import TreeNode
 
 #######################
+# Solution 2 -- RUNTIME BETTER THAN 44.22%; MEMORY BETTER THAN 62.17% PYTHON3 SUBMISSIONS
+# This solution in theory doesn't create new lists at each iteration.
+
+class Solution2:
+    def sortedArrayToBST(self, nums):
+        
+        def subtree(l, r):
+            if l > r:
+                return None
+            if l == r:
+                return TreeNode(nums[l])
+            
+            mid = l+ (r-l)//2
+            node = TreeNode(nums[mid],
+                subtree(l, mid-1),
+                subtree(mid+1, r))
+            
+            return node
+        
+        return subtree(0, len(nums)-1)
+
+
+#######################
 # Solution 1 - RUNTIME BETTER THAN 36.10%; MEMORY BETTER THAN 64.59% PYTHON3 SUBMISSIONS.
 
-class Solution:
+class Solution1:
     def sortedArrayToBST(self, nums):
         
         if nums:
@@ -35,8 +58,10 @@ class Solution:
         else:
             return None
 
+# ---
+
 test = [-10,-3,0,5,9]
 
-testcase = Solution()
+testcase = Solution2()
 k = testcase.sortedArrayToBST(test)
 k.show()
