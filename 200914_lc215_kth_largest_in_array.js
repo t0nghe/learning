@@ -1,4 +1,5 @@
-// // 215. Kth Largest Element in an Array
+// 215. Kth Largest Element in an Array
+// https://leetcode.com/problems/kth-largest-element-in-an-array/
 
 // Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
@@ -15,19 +16,26 @@
 // Note:
 // You may assume k is always valid, 1 ≤ k ≤ array's length.
 
-/**
- * @param {number[]} nums
- * @param {number} k
- * @return {number}
- */
+// SOLUTION 3
 
 
- // SOLUTION 2.
+// SOLUTION 2, Python, using a heap
 
+// Faster than 72.53%, better memory than 41.97%.
+
+// ```python
+// import heapq
+
+// class Solution:
+//     def findKthLargest(self, nums: List[int], k: int) -> int:
+//         heapq.heapify(nums)
+//         return heapq.nlargest(k, nums)[-1]
+// ```
+
+// SOLUTION 1, my own, very naive.
  
+// Faster than 42.95%, better memory than 92.23%.
 
- // SOLUTION 1, my own, very naive.
- // Faster than 42.95%, memory better than 92.23%.
 var findKthLargest1 = function(nums, k) {
     nums.sort((a,b)=>b-a);
     return nums[k-1];
