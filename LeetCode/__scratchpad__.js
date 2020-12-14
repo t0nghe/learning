@@ -1,8 +1,22 @@
-const hello = [
-      [0,1,0],
-      [0,0,1],
-      [1,1,100],
-      [0,0,20]
-    ]
+function firstUniqChar2(s) {
+    let map;
+    
+    for (let i = 0; i <s.length; i++) {
+        let char = s.charAt(i);
+        if (char in map) {
+            map[char]++;
+        } else {
+            map[char] = 1;
+        }
+    }
 
-console.log(hello[3][2])
+    for (let k in map) {
+        if (map[k] == 1) {
+            return s.indexOf(k);
+        } else {
+            return -1
+        }
+    }
+}
+
+console.log(firstUniqChar2("loveleetcode"))
